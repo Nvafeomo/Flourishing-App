@@ -52,8 +52,7 @@ dotenv, cors
 
 ```text
 human-flourishing-app/
-│
-├── client/                 # React frontend
+├── client/
 │   ├── src/
 │   │   ├── App.jsx
 │   │   ├── pages/
@@ -66,7 +65,7 @@ human-flourishing-app/
 │   ├── package.json
 │   └── public/
 │
-├── server/                 # Express backend
+├── server/
 │   ├── server.js
 │   ├── routes/
 │   │   └── reflections.js
