@@ -156,7 +156,7 @@ Create `/server/firebaseServiceAccountKey.json` with:
 ```
 
  **Note:**
- - You need Node.js and npm installed.
+ - You need Node.js and npm installed for the program to function properly.
  - These are test credentials for development only - replace with your own for production.
  - The app will run with these test values but won't have real authentication or database functionality.
 ## Future Improvements
