@@ -76,6 +76,7 @@ human-flourishing-app/
 │   └── package.json
 │
 └── .env                    # Environment variables
+---
 
 ## Installation and Setup
 **1**. Clone the repository
