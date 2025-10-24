@@ -58,8 +58,10 @@ human-flourishing-app/
 ---
 
 ## Installation and Setup
+**Note**:
+
 **1**. Clone the repository
-git clone https://github.com/your-username/Flourishing-App.git
+git clone https://github.com/Nvafeomo/Flourishing-App.git
 cd Flourishing-App
 
 **2**. Install dependencies
@@ -90,13 +92,13 @@ firebaseServiceAccountKey.json
 
 **5**. Run the servers
 
-Backend:
+**Backend**:
 
 cd server
 npm start
 
 
-Frontend:
+**Frontend**:
 
 cd ../client
 npm start
@@ -104,7 +106,9 @@ npm start
 
 Once both are running, open your browser and go to:
 http://localhost:3000
-
+> **Note:**
+> - You need Node.js and npm installed.
+> - If you don’t have Firebase credentials, ask the project owner for a test config or use demo values.
 ## Future Improvements
 
 Add reflection editing and deletion
