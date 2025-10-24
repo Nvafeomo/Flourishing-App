@@ -1,54 +1,40 @@
 ## Flourishing-App
-A full-stack mindfulness and reflection platform that encourages self-growth through the Five Pillars of Mindfulness.
+
+A full-stack mindfulness and reflection platform that encourages self-growth through the Five Pillars of Mindfulness.  
 Users can log in with Firebase, read inspiring quotes, and record personal reflections stored securely in MongoDB.
 
 ## Overview
 
-The Flourishing App is designed to promote mindfulness and self-awareness through guided learning and interactive journaling.
+The Flourishing App is designed to promote mindfulness and self-awareness through guided learning and interactive journaling.  
 After signing in, users begin on a page introducing the Five Pillars of Mindfulness. From there, they can explore daily quotes for inspiration or write reflections that are saved in a secure database.
 
 This project demonstrates skills in full-stack development, user authentication, API integration, and database design.
 
 ## Features
 
-Educational Mindfulness Page: Introduces the Five Pillars of Mindfulness
-
-User Authentication: Firebase authentication using Google or email/password
-
-Reflections Page: Add, view, and manage personal reflection entries
-
-Quotes Page: Displays motivational quotes using a public API
-
-MongoDB Integration: Stores reflection data in a cloud-hosted MongoDB Atlas database
-
-Responsive UI: Built with React and styled for accessibility and simplicity
+- Educational Mindfulness Page: Introduces the Five Pillars of Mindfulness  
+- User Authentication: Firebase authentication using Google or email/password  
+- Reflections Page: Add, view, and manage personal reflection entries  
+- Quotes Page: Displays motivational quotes using a public API  
+- MongoDB Integration: Stores reflection data in a cloud-hosted MongoDB Atlas database  
+- Responsive UI: Built with React and styled for accessibility and simplicity
 
 ## Tech Stack
 
-**Frontend**
+### Frontend
+- React (with React Router DOM)
+- Firebase Authentication
+- Axios for API calls
+- Tailwind CSS
 
-React (with React Router DOM)
+### Backend
+- Node.js
+- Express.js
+- MongoDB Atlas with Mongoose
+- Firebase Admin SDK (for verifying tokens)
+- dotenv, cors
 
-Firebase Authentication
-
-Axios for API calls
-
-Tailwind CSS
-
-**Backend**
-
-Node.js
-
-Express.js
-
-MongoDB Atlas with Mongoose
-
-Firebase Admin SDK (for verifying tokens)
-
-dotenv, cors
-
-
-##  Project Structure
+## Project Structure
 
 ```text
 human-flourishing-app/
@@ -68,13 +54,7 @@ human-flourishing-app/
 ├── server/
 │   ├── server.js
 │   ├── routes/
-│   │   └── reflections.js
-│   ├── models/
-│   │   └── Reflection.js
-│   ├── firebaseServiceAccountKey.json
-│   └── package.json
-│
-└── .env                    # Environment variables
+
 ---
 
 ## Installation and Setup
