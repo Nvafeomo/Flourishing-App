@@ -174,7 +174,7 @@ Create `/server/firebaseServiceAccountKey.json` with:
 ## Author
 
 Nvafeomo Konneh
-Comuter Science Student | Aspiring Full-Stack Developer
+Comuter Science Student | Aspiring Full-Stack Software Engineer
 Email: konnehnvafeomo@gmail.com
 GitHub: https://github.com/Nvafeomo
 LinkedIn: https://www.linkedin.com/in/nvafeomo-konneh-a6a1a9367/
