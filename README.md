@@ -5,10 +5,10 @@ Users can log in with Firebase, read inspiring quotes, and record personal refle
 
 ## Overview
 
--The Flourishing App is designed to promote mindfulness and self-awareness through guided learning and interactive journaling.  
--After signing in, users begin on a page introducing the Five Pillars of Mindfulness. From there, they can explore daily quotes for inspiration or write reflections that are saved in a secure database.
+- The Flourishing App is designed to promote mindfulness and self-awareness through guided learning and interactive journaling.  
+- After signing in, users begin on a page introducing the Five Pillars of Mindfulness. From there, they can explore daily quotes for inspiration or write reflections that are saved in a secure database.
 
--This project demonstrates my skills in full-stack development, user authentication, API integration, and database design.
+- This project demonstrates my skills in full-stack development, user authentication, API integration, and database design.
 
 ## Features
 
