@@ -58,7 +58,7 @@ human-flourishing-app/
 ---
 
 ## Installation and Setup
-**Note**:
+
 
 **1**. Clone the repository
 git clone https://github.com/Nvafeomo/Flourishing-App.git
@@ -155,10 +155,10 @@ Create `/server/firebaseServiceAccountKey.json` with:
 }
 ```
 
-> **Note:**
-> - You need Node.js and npm installed.
-> - These are test credentials for development only - replace with your own for production.
-> - The app will run with these test values but won't have real authentication or database functionality.
+ **Note:**
+ - You need Node.js and npm installed.
+ - These are test credentials for development only - replace with your own for production.
+ - The app will run with these test values but won't have real authentication or database functionality.
 ## Future Improvements
 
 Add reflection editing and deletion
