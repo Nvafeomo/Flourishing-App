@@ -48,6 +48,9 @@ Firebase Admin SDK (for verifying tokens)
 dotenv, cors
 
 **Folder Structure**
+## 📁 Project Structure
+
+```text
 human-flourishing-app/
 │
 ├── client/                 # React frontend
@@ -73,6 +76,7 @@ human-flourishing-app/
 │   └── package.json
 │
 └── .env                    # Environment variables
+
 ## Installation and Setup
 **1**. Clone the repository
 git clone https://github.com/your-username/Flourishing-App.git
@@ -133,7 +137,7 @@ Implement dark/light mode
 
 Add search and filtering for reflections
 
-Author
+## Author
 
 Nvafeomo Konneh
 Comuter Science Student | Aspiring Full-Stack Developer
