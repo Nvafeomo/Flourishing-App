@@ -47,8 +47,8 @@ Firebase Admin SDK (for verifying tokens)
 
 dotenv, cors
 
-**Folder Structure**
-## 📁 Project Structure
+
+##  Project Structure
 
 ```text
 human-flourishing-app/
