@@ -1,4 +1,4 @@
-## Flourishing-App
+# Flourishing-App
 
 A full-stack mindfulness and reflection platform that encourages self-growth through the Five Pillars of Mindfulness.  
 Users can log in with Firebase, read inspiring quotes, and record personal reflections stored securely in MongoDB.
