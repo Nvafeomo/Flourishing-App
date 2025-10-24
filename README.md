@@ -161,15 +161,15 @@ Create `/server/firebaseServiceAccountKey.json` with:
  - The app will run with these test values but won't have real authentication or database functionality.
 ## Future Improvements
 
-Add reflection editing and deletion
+- Add reflection editing and deletion
 
-Track daily reflection streaks
+- Track daily reflection streaks
 
-Include AI-generated mindfulness prompts
+- Include AI-generated mindfulness prompts
 
-Implement dark/light mode
+- Implement dark/light mode
 
-Add search and filtering for reflections
+- Add search and filtering for reflections
 
 ## Author
 
