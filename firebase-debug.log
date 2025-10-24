@@ -1,0 +1,142 @@
+[debug] [2025-10-24T02:05:53.294Z] ----------------------------------------------------------------------
+[debug] [2025-10-24T02:05:53.300Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nvafe\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-10-24T02:05:53.300Z] CLI Version:   14.22.0
+[debug] [2025-10-24T02:05:53.301Z] Platform:      win32
+[debug] [2025-10-24T02:05:53.301Z] Node Version:  v22.17.0
+[debug] [2025-10-24T02:05:53.301Z] Time:          Thu Oct 23 2025 22:05:53 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-10-24T02:05:53.302Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Personal CS Work\HDFS108
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2025-10-24T02:06:11.230Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-10-24T02:06:11.230Z] > authorizing via signed-in user (nvafeomo05@gmail.com)
+[debug] [2025-10-24T02:06:11.232Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:11.232Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:11.233Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/flourish-app-77e3d [none]
+[debug] [2025-10-24T02:06:11.591Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/flourish-app-77e3d 200
+[debug] [2025-10-24T02:06:11.591Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/flourish-app-77e3d {"projectId":"flourish-app-77e3d","projectNumber":"314827372421","displayName":"Flourish App","name":"projects/flourish-app-77e3d","resources":{"hostingSite":"flourish-app-77e3d"},"state":"ACTIVE","etag":"1_6db1ae42-cbe5-4f9c-b76d-947ca6ca3c8d"}
+[info] i  Using project flourish-app-77e3d (Flourish App) . 
+[info] 
+=== App Hosting Setup
+[debug] [2025-10-24T02:06:11.596Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:11.597Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:11.597Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/flourish-app-77e3d/billingInfo [none]
+[debug] [2025-10-24T02:06:11.775Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/flourish-app-77e3d/billingInfo 200
+[debug] [2025-10-24T02:06:11.775Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/flourish-app-77e3d/billingInfo {"name":"projects/flourish-app-77e3d/billingInfo","projectId":"flourish-app-77e3d","billingAccountName":"billingAccounts/01D435-DCCBC8-B6142A","billingEnabled":true}
+[debug] [2025-10-24T02:06:11.776Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:11.776Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:11.776Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-10-24T02:06:11.776Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:12.215Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-10-24T02:06:12.215Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-10-24T02:06:12.215Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:12.215Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:12.216Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/firebaseapphosting.googleapis.com:enable [none]
+[debug] [2025-10-24T02:06:12.216Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/firebaseapphosting.googleapis.com:enable x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:12.979Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/firebaseapphosting.googleapis.com:enable 200
+[debug] [2025-10-24T02:06:12.979Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/firebaseapphosting.googleapis.com:enable [omitted]
+[debug] [2025-10-24T02:06:22.986Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.986Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.986Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.986Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.986Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.987Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.987Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.987Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.987Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.987Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.987Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.987Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:22.987Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/developerconnect.googleapis.com [none]
+[debug] [2025-10-24T02:06:22.987Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/developerconnect.googleapis.com x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:22.989Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/cloudbuild.googleapis.com [none]
+[debug] [2025-10-24T02:06:22.989Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/cloudbuild.googleapis.com x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:22.991Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/secretmanager.googleapis.com [none]
+[debug] [2025-10-24T02:06:22.991Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/secretmanager.googleapis.com x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:22.993Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/run.googleapis.com [none]
+[debug] [2025-10-24T02:06:22.993Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/run.googleapis.com x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:22.995Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/artifactregistry.googleapis.com [none]
+[debug] [2025-10-24T02:06:22.995Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/artifactregistry.googleapis.com x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:22.996Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/iam.googleapis.com [none]
+[debug] [2025-10-24T02:06:22.996Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/iam.googleapis.com x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:23.317Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/developerconnect.googleapis.com 200
+[debug] [2025-10-24T02:06:23.317Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/developerconnect.googleapis.com [omitted]
+[debug] [2025-10-24T02:06:23.317Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:23.317Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:23.317Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/developerconnect.googleapis.com:enable [none]
+[debug] [2025-10-24T02:06:23.317Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/developerconnect.googleapis.com:enable x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:23.320Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/iam.googleapis.com 200
+[debug] [2025-10-24T02:06:23.320Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/iam.googleapis.com [omitted]
+[debug] [2025-10-24T02:06:23.396Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/cloudbuild.googleapis.com 200
+[debug] [2025-10-24T02:06:23.396Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/cloudbuild.googleapis.com [omitted]
+[debug] [2025-10-24T02:06:23.421Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/secretmanager.googleapis.com 200
+[debug] [2025-10-24T02:06:23.421Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/secretmanager.googleapis.com [omitted]
+[debug] [2025-10-24T02:06:23.426Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/artifactregistry.googleapis.com 200
+[debug] [2025-10-24T02:06:23.426Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/artifactregistry.googleapis.com [omitted]
+[debug] [2025-10-24T02:06:23.443Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/run.googleapis.com 200
+[debug] [2025-10-24T02:06:23.443Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/run.googleapis.com [omitted]
+[debug] [2025-10-24T02:06:24.031Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/developerconnect.googleapis.com:enable 200
+[debug] [2025-10-24T02:06:24.031Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/flourish-app-77e3d/services/developerconnect.googleapis.com:enable [omitted]
+[debug] [2025-10-24T02:06:34.038Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:34.039Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:34.039Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/flourish-app-77e3d/serviceAccounts/firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-10-24T02:06:34.039Z] >>> [apiv2][(partial)header] POST https://iam.googleapis.com/v1/projects/flourish-app-77e3d/serviceAccounts/firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com:testIamPermissions x-goog-quota-user=projects/flourish-app-77e3d
+[debug] [2025-10-24T02:06:34.039Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/flourish-app-77e3d/serviceAccounts/firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-10-24T02:06:34.221Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/flourish-app-77e3d/serviceAccounts/firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com:testIamPermissions 404
+[debug] [2025-10-24T02:06:34.221Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/flourish-app-77e3d/serviceAccounts/firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2025-10-24T02:06:34.221Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:34.221Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:34.222Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/flourish-app-77e3d/serviceAccounts [none]
+[debug] [2025-10-24T02:06:34.222Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/flourish-app-77e3d/serviceAccounts {"accountId":"firebase-app-hosting-compute","serviceAccount":{"displayName":"Firebase App Hosting compute service account","description":"Default service account used to run builds and deploys for Firebase App Hosting"}}
+[debug] [2025-10-24T02:06:34.810Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/flourish-app-77e3d/serviceAccounts 200
+[debug] [2025-10-24T02:06:34.810Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/flourish-app-77e3d/serviceAccounts [omitted]
+[debug] [2025-10-24T02:06:34.810Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:34.810Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:34.810Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/flourish-app-77e3d:getIamPolicy [none]
+[debug] [2025-10-24T02:06:35.043Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/flourish-app-77e3d:getIamPolicy 200
+[debug] [2025-10-24T02:06:35.043Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/flourish-app-77e3d:getIamPolicy {"version":1,"etag":"BwZB3f7Ozsk=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:314827372421@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-314827372421@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-314827372421@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:314827372421-compute@developer.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:service-314827372421@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-fbsvc@flourish-app-77e3d.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-fbsvc@flourish-app-77e3d.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:nvafeomo05@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-314827372421@serverless-robot-prod.iam.gserviceaccount.com"]}]}
+[debug] [2025-10-24T02:06:35.043Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:35.043Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:35.043Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/flourish-app-77e3d:setIamPolicy [none]
+[debug] [2025-10-24T02:06:35.043Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/flourish-app-77e3d:setIamPolicy {"policy":{"version":1,"etag":"BwZB3f7Ozsk=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:314827372421@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-314827372421@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-314827372421@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:314827372421-compute@developer.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:service-314827372421@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-fbsvc@flourish-app-77e3d.iam.gserviceaccount.com","serviceAccount:firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-fbsvc@flourish-app-77e3d.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:nvafeomo05@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-314827372421@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/firebaseapphosting.computeRunner","members":["serviceAccount:firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com"]},{"role":"roles/developerconnect.readTokenAccessor","members":["serviceAccount:firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com"]},{"role":"roles/storage.objectViewer","members":["serviceAccount:firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com"]}]},"updateMask":"bindings"}
+[debug] [2025-10-24T02:06:35.518Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/flourish-app-77e3d:setIamPolicy 400
+[debug] [2025-10-24T02:06:35.518Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/flourish-app-77e3d:setIamPolicy {"error":{"code":400,"message":"Service account firebase-app-hosting-compute@flourish-app-77e3d.iam.gserviceaccount.com does not exist.","status":"INVALID_ARGUMENT"}}
+[warn] !  Your App Hosting compute service account is still being provisioned in the background. If you encounter an error, please try again after a few moments. 
+[info] i  This command links your local project to Firebase App Hosting. You will be able to deploy your web app with `firebase deploy` after setup. 
+[debug] [2025-10-24T02:06:57.387Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:57.387Z] Checked if tokens are valid: true, expires at: 1761274415533
+[debug] [2025-10-24T02:06:57.387Z] >>> [apiv2][query] GET https://firebaseapphosting.googleapis.com/v1beta/projects/flourish-app-77e3d/locations/-/backends 
+[debug] [2025-10-24T02:06:57.846Z] <<< [apiv2][status] GET https://firebaseapphosting.googleapis.com/v1beta/projects/flourish-app-77e3d/locations/-/backends 200
+[debug] [2025-10-24T02:06:57.846Z] <<< [apiv2][body] GET https://firebaseapphosting.googleapis.com/v1beta/projects/flourish-app-77e3d/locations/-/backends {}
+[debug] [2025-10-24T02:08:34.670Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\nvafe\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:518:28)
+    at Interface.emit (node:domain:489:12)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1132:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:271:20)
+    at ReadStream.emit (node:events:530:35)
+    at ReadStream.emit (node:domain:489:12)
+    at emitKeys (node:internal/readline/utils:370:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+[error] 
+[error] Error: An unexpected error has occurred.
