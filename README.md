@@ -106,9 +106,59 @@ npm start
 
 Once both are running, open your browser and go to:
 http://localhost:3000
+
+## Test Configuration (For Quick Setup)
+
+If you don't have your own Firebase credentials, you can use these test configuration values to get the app running quickly:
+
+### Frontend Firebase Config
+In `/client/src/firebase.js`, replace the Firebase config with:
+
+```javascript
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: "test-api-key",
+  projectId: "test-project-id",
+  authDomain: "test-project-id.firebaseapp.com",
+  storageBucket: "test-project-id.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "test-app-id"
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+```
+
+### Backend Environment Variables
+In `/server/.env`, use these test values:
+
+```
+MONGO_URI=mongodb+srv://test:test@cluster0.mongodb.net/test?retryWrites=true&w=majority
+PORT=5000
+```
+
+### Test Firebase Service Account
+Create `/server/firebaseServiceAccountKey.json` with:
+
+```json
+{
+  "type": "service_account",
+  "project_id": "test-project-id",
+  "private_key_id": "test-key-id",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nTEST_PRIVATE_KEY\n-----END PRIVATE KEY-----\n",
+  "client_email": "test@test-project-id.iam.gserviceaccount.com",
+  "client_id": "123456789",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token"
+}
+```
+
 > **Note:**
 > - You need Node.js and npm installed.
-> - If you don’t have Firebase credentials, ask the project owner for a test config or use demo values.
+> - These are test credentials for development only - replace with your own for production.
+> - The app will run with these test values but won't have real authentication or database functionality.
 ## Future Improvements
 
 Add reflection editing and deletion
@@ -126,7 +176,6 @@ Add search and filtering for reflections
 Nvafeomo Konneh
 Comuter Science Student | Aspiring Full-Stack Developer
 Email: konnehnvafeomo@gmail.com
-
 GitHub: https://github.com/Nvafeomo
-
 LinkedIn: https://www.linkedin.com/in/nvafeomo-konneh-a6a1a9367/
+
