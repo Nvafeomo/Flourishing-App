@@ -54,7 +54,7 @@ human-flourishing-app/
 ├── server/
 │   ├── server.js
 │   ├── routes/
-
+```
 ---
 
 ## Installation and Setup
