@@ -23,9 +23,16 @@ export default function Quote() {
     }
     fetchQuote();
   }, []);
-
+  
   return (
-    <div className="quote-box">
+    <div className="quote-box" style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+        maxWidth: 320,
+        margin: "auto",
+        textAlign: "center",
+      }}>
       <h3>Inspirational Quote of the Day</h3>
       {loading ? (
         <p>Loading quote...</p>

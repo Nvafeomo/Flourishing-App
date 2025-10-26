@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-
+import { getFirestore } from "firebase/firestore";
 // Read Firebase config from Vite env variables (must start with VITE_)
 // Create a `client/.env.local` (or `.env`) with these keys and restart the dev server.
 const firebaseConfig = {
@@ -38,3 +38,4 @@ if (import.meta.env.DEV) {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);

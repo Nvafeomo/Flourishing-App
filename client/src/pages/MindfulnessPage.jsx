@@ -17,7 +17,7 @@ export default function MindfulnessPage() {
           <li><a href="#integration">Integration</a></li>
         </ul>
       </nav>
-
+      
       <section id="foundations">
         <h2 className="dimension-header">Foundations</h2>
         <div className="topic">

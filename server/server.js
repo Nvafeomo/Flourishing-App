@@ -2,12 +2,14 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import reflectionRoutes from "./routes/reflections.js"; // your reflection routes
+import reflectionRoutes from "./routes/Reflection.js"; // your reflection routes
 import quotesRoutes from "./routes/quotes.js";
 import admin from "firebase-admin"; // for Firebase Auth
-import serviceAccount from "./firebaseServiceAccountKey.json" assert { type: "json" };
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const serviceAccount = require("./firebaseServiceAccountKey.json");
 
-dotenv.config();
+dotenv.config({ path: './.env' });
 
 const app = express();
 app.use(cors());
@@ -38,13 +40,14 @@ app.use("/api/reflections", reflectionRoutes);
 app.use("/api/quotes", quotesRoutes);
 
 // Connect to MongoDB Atlas
+const mongoUri = process.env.MONGO_URI || "mongodb://localhost:27017/flourishing-app";
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(mongoUri)
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Optional test route
 app.get("/", (req, res) => res.send("Server is running!"));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
