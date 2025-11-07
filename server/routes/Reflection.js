@@ -15,7 +15,12 @@ router.get("/:userId", async (req, res) => {
 // Add a new reflection
 router.post("/", async (req, res) => {
   try {
-    const newReflection = new Reflection(req.body);
+    // If reflectionDate is provided, use it; otherwise default to now
+    const reflectionData = {
+      ...req.body,
+      reflectionDate: req.body.reflectionDate ? new Date(req.body.reflectionDate) : new Date(),
+    };
+    const newReflection = new Reflection(reflectionData);
     await newReflection.save();
     res.json(newReflection);
   } catch (err) {

@@ -33,7 +33,7 @@ export default function Quote() {
         margin: "auto",
         textAlign: "center",
       }}>
-      <h3>Inspirational Quote of the Day</h3>
+      <h3>Inspirational Quote</h3>
       {loading ? (
         <p>Loading quote...</p>
       ) : error ? (

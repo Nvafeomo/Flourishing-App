@@ -6,7 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 
-export default function Auth({ user, setUser }) {
+export default function AuthForm({ user, setUser }) {
   const [mode, setMode] = useState("login"); // "login" or "signup"
   const [usernameOrEmail, setUsernameOrEmail] = useState("");
   const [username, setUsername] = useState("");
