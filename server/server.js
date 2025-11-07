@@ -50,4 +50,20 @@ mongoose
 app.get("/", (req, res) => res.send("Server is running!"));
 
 const PORT = process.env.PORT || 5001;
+import fetch from "node-fetch"; // if using ES modules
+// OR if using require syntax:
+// const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
+app.get("/api/quotes/today", async (req, res) => {
+  try {
+    const response = await fetch("https://zenquotes.io/api/today");
+    if (!response.ok) throw new Error("Failed to fetch quote from API");
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    console.error("Error fetching quote:", err.message);
+    res.status(500).json({ error: "Failed to fetch quote" });
+  }
+});
+
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

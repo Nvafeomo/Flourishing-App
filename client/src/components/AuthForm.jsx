@@ -1,36 +1,39 @@
 import { useState } from "react";
-import { auth, db } from "../firebase";
+import { auth } from "../firebase";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { collection, query, where, getDocs, setDoc, doc } from "firebase/firestore";
 
 export default function Auth({ user, setUser }) {
-  const [identifier, setIdentifier] = useState(""); // username or email
+  const [mode, setMode] = useState("login"); // "login" or "signup"
+  const [usernameOrEmail, setUsernameOrEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // 🔹 LOGIN with username or email
+  // Login with either username or email
   const handleLogin = async () => {
     setLoading(true);
     setError(null);
     try {
-      let loginEmail = identifier;
+      let emailToUse = "";
 
-      // If it's a username (no @), look up corresponding email in Firestore
-      if (!identifier.includes("@")) {
-        const usersRef = collection(db, "users");
-        const q = query(usersRef, where("username", "==", identifier));
-        const querySnapshot = await getDocs(q);
-        if (querySnapshot.empty) throw new Error("No user found with that username.");
-        loginEmail = querySnapshot.docs[0].data().email;
+      // Determine if input is email or username
+      if (usernameOrEmail.includes("@")) {
+        emailToUse = usernameOrEmail;
+      } else {
+        // Lookup email by username
+        const res = await fetch(`/api/users/email?username=${usernameOrEmail}`);
+        if (!res.ok) throw new Error("Username not found");
+        const data = await res.json();
+        emailToUse = data.email;
       }
 
-      const userCred = await signInWithEmailAndPassword(auth, loginEmail, password);
-      console.log("✅ Logged in:", userCred.user.email);
+      const userCred = await signInWithEmailAndPassword(auth, emailToUse, password);
       setUser(userCred.user);
     } catch (err) {
       console.error("Login error:", err);
@@ -40,22 +43,20 @@ export default function Auth({ user, setUser }) {
     }
   };
 
-  // 🔹 SIGNUP — create user if account doesn’t exist yet
+  // Signup and register username/email pair in MongoDB
   const handleSignup = async () => {
     setLoading(true);
     setError(null);
     try {
-      // if user typed username instead of email, ask for an email
-      if (!identifier.includes("@")) {
-        throw new Error("Please sign up with a valid email address.");
-      }
-      const userCred = await createUserWithEmailAndPassword(auth, identifier, password);
-      // store email/username pair (for now, username = part before @)
-      const username = identifier.split("@")[0];
-      await setDoc(doc(db, "users", userCred.user.uid), {
-        username,
-        email: identifier,
+      const userCred = await createUserWithEmailAndPassword(auth, email, password);
+
+      // Save username + email to MongoDB
+      await fetch("/api/users/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email }),
       });
+
       setUser(userCred.user);
     } catch (err) {
       console.error("Signup error:", err);
@@ -71,17 +72,14 @@ export default function Auth({ user, setUser }) {
   };
 
   return (
-    <div
-      className="auth-box"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-        maxWidth: 320,
-        margin: "auto",
-        textAlign: "center",
-      }}
-    >
+    <div className="auth-box" style={{
+      maxWidth: 400,
+      margin: "auto",
+      textAlign: "center",
+      display: "flex",
+      flexDirection: "column",
+      gap: 10,
+    }}>
       {user ? (
         <div>
           <p>Welcome, {user.email}</p>
@@ -89,39 +87,74 @@ export default function Auth({ user, setUser }) {
         </div>
       ) : (
         <>
-          <label style={{ fontWeight: 600, textAlign: "left" }}>Username or Email:</label>
-          <input
-            placeholder="Enter username or email"
-            value={identifier}
-            onChange={(e) => setIdentifier(e.target.value)}
-          />
+          {mode === "login" ? (
+            <>
+              <h3>Login</h3>
+              <label>Username or Email:</label>
+              <input
+                value={usernameOrEmail}
+                onChange={(e) => setUsernameOrEmail(e.target.value)}
+                placeholder="Enter username or email"
+              />
 
-          <label style={{ fontWeight: 600, textAlign: "left" }}>Password:</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+              <label>Password:</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter password"
+              />
 
-          <div style={{ marginTop: 12 }}>
-            <button onClick={handleLogin} disabled={loading}>
-              {loading ? "..." : "Login"}
-            </button>
-            <button
-              onClick={handleSignup}
-              disabled={loading}
-              style={{ marginLeft: 8 }}
-            >
-              {loading ? "..." : "Sign Up"}
-            </button>
-          </div>
+              <button onClick={handleLogin} disabled={loading}>
+                {loading ? "Logging in..." : "Login"}
+              </button>
 
-          {error && (
-            <div style={{ color: "#b00020", marginTop: 8 }}>
-              <strong>Error:</strong> {error}
-            </div>
+              <p style={{ marginTop: 10 }}>
+                Don’t have an account?{" "}
+                <button onClick={() => setMode("signup")} style={{ color: "blue", border: "none", background: "none", cursor: "pointer" }}>
+                  Sign Up
+                </button>
+              </p>
+            </>
+          ) : (
+            <>
+              <h3>Sign Up</h3>
+              <label>Username:</label>
+              <input
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Choose a username"
+              />
+
+              <label>Email:</label>
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter email"
+              />
+
+              <label>Password:</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter password"
+              />
+
+              <button onClick={handleSignup} disabled={loading}>
+                {loading ? "Signing up..." : "Sign Up"}
+              </button>
+
+              <p style={{ marginTop: 10 }}>
+                Already have an account?{" "}
+                <button onClick={() => setMode("login")} style={{ color: "blue", border: "none", background: "none", cursor: "pointer" }}>
+                  Login
+                </button>
+              </p>
+            </>
           )}
+
+          {error && <p style={{ color: "#b00020" }}>Error: {error}</p>}
         </>
       )}
     </div>
