@@ -1,0 +1,105 @@
+.quote-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quote-box h3 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.quote-content {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.quote-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+  font-style: italic;
+  margin: 0;
+}
+
+.quote-author {
+  font-size: 16px;
+  color: #666;
+  font-weight: 600;
+  margin: 0;
+}
+
+.quote-error {
+  color: #b00020;
+  margin: 0;
+}
+
+.quote-navigation {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  border: 2px solid #4a90e2;
+  background: white;
+  color: #4a90e2;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: #4a90e2;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+}
+
+.nav-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #ccc;
+  color: #999;
+}
+
+.prev-button {
+  border-color: #999;
+  color: #666;
+}
+
+.prev-button:hover:not(:disabled) {
+  background: #666;
+  color: white;
+  border-color: #666;
+}
+
+.next-button {
+  border-color: #4a90e2;
+  color: #4a90e2;
+}
+
+.next-button:hover:not(:disabled) {
+  background: #4a90e2;
+  color: white;
+}
+

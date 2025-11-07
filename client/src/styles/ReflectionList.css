@@ -84,10 +84,42 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-left: 4px solid #4a90e2;
   transition: box-shadow 0.3s;
+  position: relative;
 }
 
 .reflection-item:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.delete-button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  line-height: 1;
+  padding: 0;
+}
+
+.delete-button:hover {
+  background: #fee;
+  color: #d32f2f;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.delete-button:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .reflection-date {
@@ -105,6 +137,7 @@
   line-height: 1.6;
   white-space: pre-wrap;
   word-wrap: break-word;
+  padding-right: 40px; /* Make room for delete button */
 }
 
 .no-reflections {

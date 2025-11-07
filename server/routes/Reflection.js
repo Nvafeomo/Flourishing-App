@@ -28,4 +28,17 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Delete a reflection
+router.delete("/:id", async (req, res) => {
+  try {
+    const reflection = await Reflection.findByIdAndDelete(req.params.id);
+    if (!reflection) {
+      return res.status(404).json({ error: "Reflection not found" });
+    }
+    res.json({ message: "Reflection deleted successfully", id: req.params.id });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;

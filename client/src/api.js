@@ -11,3 +11,8 @@ export const addReflection = async (reflection) => {
   const res = await axios.post(`${API_BASE}/reflections`, reflection);
   return res.data;
 };
+
+export const deleteReflection = async (reflectionId) => {
+  const res = await axios.delete(`${API_BASE}/reflections/${reflectionId}`);
+  return res.data;
+};

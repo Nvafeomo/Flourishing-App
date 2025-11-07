@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchReflections, addReflection } from "../api";
+import { fetchReflections, addReflection, deleteReflection } from "../api";
 import "../styles/ReflectionList.css";
 
 export default function ReflectionList({ user }) {
@@ -62,6 +62,21 @@ export default function ReflectionList({ user }) {
     }
   };
 
+  const handleDelete = async (reflectionId) => {
+    if (!window.confirm("Are you sure you want to delete this reflection?")) {
+      return;
+    }
+    
+    try {
+      await deleteReflection(reflectionId);
+      setReflections(reflections.filter((r) => r._id !== reflectionId));
+    } catch (error) {
+      console.error("Error deleting reflection:", error);
+      const errorMessage = error.response?.data?.error || error.message || "Failed to delete reflection. Please try again.";
+      alert(`Error: ${errorMessage}`);
+    }
+  };
+
   return (
     <div className="reflection-list-container">
       <h2>Your Reflections</h2>
@@ -99,6 +114,13 @@ export default function ReflectionList({ user }) {
         ) : (
           reflections.map((r) => (
             <div key={r._id} className="reflection-item">
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(r._id)}
+                aria-label="Delete reflection"
+              >
+                ×
+              </button>
               <div className="reflection-date">
                 {formatDate(r.reflectionDate || r.createdAt)}
               </div>
