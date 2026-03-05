@@ -7,53 +7,63 @@ Users can log in with Firebase, read inspiring quotes, and record personal refle
 
 - The Flourishing App is designed to promote mindfulness and self-awareness through guided learning and interactive journaling.  
 - After signing in, users begin on a page introducing the Five Pillars of Mindfulness. From there, they can explore daily quotes for inspiration or write reflections that are saved in a secure database.
-
 - This project demonstrates my skills in full-stack development, user authentication, API integration, and database design.
 
 ## Features
 
 - Educational Mindfulness Page: Introduces the Five Pillars of Mindfulness  
-- User Authentication: Firebase authentication using Google or email/password  
+- User Authentication: Firebase authentication using email/password  
 - Reflections Page: Add, view, and manage personal reflection entries  
-- Quotes Page: Displays motivational quotes using a public API  
-- MongoDB Integration: Stores reflection data in a cloud-hosted MongoDB Atlas database  
-- Responsive UI: Built with React and styled for accessibility and simplicity
+- Quotes Page: Displays motivational quotes using a public API (proxied through the backend)  
+- MongoDB Integration: Stores reflection data in a cloud-hosted MongoDB Atlas database (or local MongoDB)  
+- Responsive UI: Built with React and styled for accessibility and simplicity  
 
 ## Tech Stack
 
 ### Frontend
-- React (with React Router DOM)
-- Firebase Authentication
+- React (with Vite and React Router DOM installed)
+- Firebase Authentication (email/password)
 - Axios for API calls
-- Tailwind CSS
+- Plain CSS (custom `.css` files)
 
 ### Backend
 - Node.js
 - Express.js
-- MongoDB Atlas with Mongoose
+- MongoDB Atlas / MongoDB with Mongoose
 - Firebase Admin SDK (for verifying tokens)
 - dotenv, cors
 
 ## Project Structure
 
 ```text
-human-flourishing-app/
+Flourishing-App/
 ├── client/
 │   ├── src/
 │   │   ├── App.jsx
+│   │   ├── main.jsx
 │   │   ├── pages/
-│   │   │   ├── MindfulnessPillars.jsx
-│   │   │   ├── Reflections.jsx
-│   │   │   └── Quotes.jsx
+│   │   │   ├── MindfulnessPage.jsx
+│   │   │   ├── ReflectionsPage.jsx
+│   │   │   └── QuotesPage.jsx
 │   │   ├── components/
-│   │   │   └── Navbar.jsx
-│   │   └── firebase.js
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── AuthForm.jsx
+│   │   │   ├── ReflectionList.jsx
+│   │   │   └── Quote.jsx
+│   │   ├── firebase.js
+│   │   └── styles/
 │   ├── package.json
-│   └── public/
+│   └── vite.config.js
 │
 ├── server/
 │   ├── server.js
 │   ├── routes/
+│   │   ├── Reflection.js
+│   │   └── quotes.js
+│   ├── models/
+│   │   └── Reflection.js
+│   ├── package.json
+│   └── .env
 ```
 ---
 
@@ -175,7 +185,7 @@ Create `/server/firebaseServiceAccountKey.json` with:
 
 Nvafeomo Konneh
 Comuter Science Student | Aspiring Full-Stack Software Engineer
-Email: konnehnvafeomo@gmail.com
+Email: nvafeomo05@gmail.com
 GitHub: https://github.com/Nvafeomo
 LinkedIn: https://www.linkedin.com/in/nvafeomo-konneh-a6a1a9367/
 
