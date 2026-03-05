@@ -70,11 +70,12 @@ Flourishing-App/
 ## Installation and Setup
 
 
-**1**. Clone the repository
+### **1**. Clone the repository
+```bash
 git clone https://github.com/Nvafeomo/Flourishing-App.git
 cd Flourishing-App
-
-**2**. Install dependencies
+```
+### **2**. Install dependencies
 
 **Frontend**:
 
@@ -87,20 +88,20 @@ npm install
 cd ../server
 npm install
 
-**3**. Set up environment variables
+### **3**. Set up environment variables
 
 Inside the /server directory, create a .env file and add:
 
 MONGO_URI=<your MongoDB Atlas connection string>
 PORT=5000
 
-**4**. Add Firebase credentials
+### **4**. Add Firebase credentials
 
 Place your Firebase Admin SDK key file in the /server folder and name it:
 
 firebaseServiceAccountKey.json
 
-**5**. Run the servers
+### **5**. Run the servers
 
 **Backend**:
 
