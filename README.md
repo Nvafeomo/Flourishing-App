@@ -76,16 +76,16 @@ git clone https://github.com/Nvafeomo/Flourishing-App.git
 cd Flourishing-App
 ```
 ### **2**. Install dependencies
-
+### Open two terminal tabs, one for the server and one for the client
 **Frontend**:
 
-cd client
+cd ./client
 npm install
 
 
 **Backend**:
 
-cd ../server
+cd ./server
 npm install
 
 ### **3**. Set up environment variables
@@ -105,13 +105,13 @@ firebaseServiceAccountKey.json
 
 **Backend**:
 
-cd server
+cd ./server
 npm start
 
 
 **Frontend**:
 
-cd ../client
+cd ./client
 npm start
 
 
